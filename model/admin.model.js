@@ -8,8 +8,7 @@ const adminSchema = new Schema({
       
     },
     Password: {
-        type:String,
-       
+        type:String, 
     },
    
     active: {

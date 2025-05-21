@@ -8,6 +8,6 @@ getAdminlogin,
 module.exports = (router) => {
 
     router.get("/get/admin",getAdminlogin);
-    router.post("/login-admin",verifyToken,Adminlogin); 
+    router.post("/login-admin",Adminlogin); 
 
 };
