@@ -3,12 +3,12 @@ const { Schema } = require("mongoose");
 
 const adminSchema = new Schema({
 
-    Username: {
+    UserName: {
         type: String,
-        required: true,
+      
     },
     Password: {
-        type: Number,
+        type:String,
        
     },
    
