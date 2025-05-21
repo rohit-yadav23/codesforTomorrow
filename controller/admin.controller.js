@@ -2,14 +2,13 @@ const Admin = require("../model/admin.model")
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 const salt = bcrypt.genSaltSync(10);
-const mongoose = require("mongoose");
 const secretKey = process.env.JWT_SECRET;
 
 
 
 const Adminlogin = async (req, res) => {
 
-  const { type, userName, password } = req.body;
+  const { userName, password } = req.body;
   console.log(req.body);
   try {
     const admin = await Admin.findOne({ userName });
@@ -32,7 +31,6 @@ const Adminlogin = async (req, res) => {
     res.status(500).json({ message: 'Server error', error });
   }
 };
-
 
 const getAdminlogin = async(req,res)=>{
   try {

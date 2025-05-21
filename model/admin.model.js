@@ -3,9 +3,6 @@ const { Schema } = require("mongoose");
 
 const adminSchema = new Schema({
 
-ategoryId: { type: Schema.Types.ObjectId, ref: 'Admin', default: null },
-
-  
     Username: {
         type: String,
         required: true,
