@@ -1,4 +1,4 @@
-
+const {verifyToken} = require("../middleware/auth")
 const {
     getcategorys,
     getcategory,
@@ -11,8 +11,8 @@ const {
 module.exports = (router) => {
 
     router.get("/get/category", getcategorys);
-    router.post("/create-category", createcategory);
+    router.post("/create-category",verifyToken, createcategory);
     router.get("/category/:id", getcategory);
-    router.patch("/update-category/:id", updatecategory);
-    router.delete("/delete-category/:id", deletecategory);
+    router.patch("/update-category/:id",verifyToken, updatecategory);
+    router.delete("/delete-category/:id",verifyToken, deletecategory);
 };

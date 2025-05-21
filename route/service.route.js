@@ -1,4 +1,4 @@
-
+const {verifyToken} = require("../middleware/auth")
 const {
     getservices,
     getservice,
@@ -11,8 +11,8 @@ const {
 module.exports = (router) => {
 
     router.get("/get/service", getservices);
-    router.post("/create-service", createservice);
+    router.post("/create-service", verifyToken,createservice);
     router.get("/service/:id", getservice);
-    router.patch("/update-service/:id", updateservice);
-    router.delete("/delete-service/:id", deleteservice);
+    router.patch("/update-service/:id",verifyToken, updateservice);
+    router.delete("/delete-service/:id",verifyToken, deleteservice);
 };
